@@ -1,0 +1,20 @@
+/*eslint-disable*/
+import axios from 'axios';
+
+export const updateSettings= async(username,email)=>{
+    try{
+        const res= await axios({
+            method:'PATCH',
+            url:'http://127.0.0.1:8000/api/v1/submit-user-data',
+            data:{
+                username,
+                email
+            }
+        })
+        if(res.data.status==='success'){
+            location.assign('/me')
+        }
+    }catch(err){
+       console.log('unable to do what you requested')
+  }
+};
