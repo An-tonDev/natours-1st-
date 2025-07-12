@@ -9,7 +9,7 @@ export const bookTour = async (tourId) => {
   try {
     // Fetch Checkout session from backend
     const session = await axios(
-      `/bookings/checkout-session/${tourId}`
+      `http://127.0.0.1:8000/bookings/checkout-session/${tourId}`
     );
 
     //console.log("Session from backend:", session);
